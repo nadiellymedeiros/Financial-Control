@@ -18,28 +18,6 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
       return;
     }
 
-    const handleSave = () => {
-      if (!desc || !amount) {
-        alert("Informe a descrição e o valor!");
-        return;
-      } else if (amount < 1) {
-        alert("O valor tem que ser positivo!");
-        return;
-      }
-
-      const transaction = {
-        id: generateID(),
-        desc: desc,
-        amount: amount,
-        expense: isExpense,
-      };
-
-      handleAdd(transaction);
-
-      setDesc("");
-      setAmount("");
-    };
-
     const transaction = {
       id: generateID(),
       desc: desc,
